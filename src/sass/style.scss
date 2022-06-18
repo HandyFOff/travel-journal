@@ -1,0 +1,114 @@
+@import '~normalize.scss';
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+.container {
+    margin: 0 auto;
+    max-width: 670px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    background-color: #F55A5A;
+
+    &>.logo {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-weight: 500;
+
+        padding: 20px;
+
+        &>.logo-name {
+            color: #fff;
+        }
+    }
+}
+
+.cards {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    gap: 20px;
+    &>.info {
+        padding: 20px 0 10px 0;
+
+        &>.info-country {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            &>.country-name {
+                font-size: 14px;
+                letter-spacing: 0.17em;
+                &::before {
+                    content: url('../assets/img/cards/map.png');
+                    margin-right: 5px;
+                }
+            }
+            &>.country-maps {
+                color: #918E9B;
+                text-decoration: underline;
+            }
+        }
+
+        &>.info-name {
+            margin: 10px 0;
+        }
+        &>.info-desc {
+            line-height: 150%;
+        }
+    }
+    &>.card-img {
+        min-width: 30%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    .card {
+        &>.info {
+            &>.info-country {
+                &>.country-name {
+                    font-size: 12px;
+                    letter-spacing: 0.15em;
+                }
+            }
+    
+            &>.info-name {
+                font-size: 26px;
+                margin: 10px 0;
+            }
+            &>.info-desc {
+                font-size: 16px;
+                line-height: 150%;
+            }
+        }
+        &>.card-img {
+            min-width: 30%;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cards {
+        padding: 40px 10% 0 10%;
+    }
+    .card {
+        flex-wrap: wrap;
+
+        &>.card-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
